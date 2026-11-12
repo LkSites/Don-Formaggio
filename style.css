@@ -1,0 +1,17 @@
+/* Estilos personalizados para a Don Formaggio Delivery */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3D2C1E;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E5A93B;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C82333;
+}

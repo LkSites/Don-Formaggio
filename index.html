@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Formaggio Delivery | Pizzaria Artesanal</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins, Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Configuração Tailwind -->
+    <script src="tailwind.config.js"></script>
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FFFBF5] text-[#3D2C1E] font-sans antialiased selection:bg-[#E5A93B] selection:text-white overflow-x-hidden">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="sticky top-0 z-40 bg-[#FFFBF5]/95 backdrop-blur-md border-b border-[#E5A93B]/30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 sm:h-24">
+                
+                <!-- Logo Don Formaggio -->
+                <a href="#inicio" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-12 h-12 rounded-2xl bg-[#5C3A21] border-2 border-[#E5A93B] flex items-center justify-center text-[#E5A93B] font-serif font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        DF
+                    </div>
+                    <div>
+                        <span class="font-serif font-extrabold tracking-wider text-lg sm:text-xl text-[#5C3A21] block uppercase leading-none">Don Formaggio</span>
+                        <span class="font-['Sacramento'] text-[#C82333] text-lg sm:text-xl block -mt-1">Delivery</span>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden lg:flex items-center space-x-8 font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#5C3A21]">
+                    <a href="#inicio" class="hover:text-[#C82333] transition-colors py-2">Início</a>
+                    <a href="#cardapio" class="hover:text-[#C82333] transition-colors py-2">Cardápio & Loja</a>
+                    <a href="#combos" class="hover:text-[#C82333] transition-colors py-2">Combos Família</a>
+                    <a href="#sobre" class="hover:text-[#C82333] transition-colors py-2">Nossa História</a>
+                    <a href="#contato" class="hover:text-[#C82333] transition-colors py-2">Localização & Contato</a>
+                </nav>
+
+                <!-- Botão Carrinho -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="toggleCart()" class="relative bg-[#C82333] hover:bg-[#A71D2A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl shadow-lg active:scale-95 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-base text-[#E5A93B]"></i>
+                        <span class="hidden sm:inline">Sacola</span>
+                        <span id="cart-badge" class="bg-[#E5A93B] text-[#3D2C1E] font-extrabold text-xs px-2 py-0.5 rounded-full ml-1">
+                            0
+                        </span>
+                    </button>
+
+                    <!-- Menu Mobile Button -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden bg-[#5C3A21] text-[#E5A93B] p-2.5 rounded-xl focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#3D2C1E] text-white border-t border-[#E5A93B]/30 px-6 py-4 space-y-3 font-semibold text-sm uppercase tracking-wider">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block text-zinc-200 hover:text-[#E5A93B] py-2">Início</a>
+            <a href="#cardapio" onclick="toggleMobileMenu()" class="block text-zinc-200 hover:text-[#E5A93B] py-2">Cardápio & Loja</a>
+            <a href="#combos" onclick="toggleMobileMenu()" class="block text-zinc-200 hover:text-[#E5A93B] py-2">Combos Família</a>
+            <a href="#sobre" onclick="toggleMobileMenu()" class="block text-zinc-200 hover:text-[#E5A93B] py-2">Nossa História</a>
+            <a href="#contato" onclick="toggleMobileMenu()" class="block text-zinc-200 hover:text-[#E5A93B] py-2">Localização & Contato</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="inicio" class="relative bg-gradient-to-b from-[#5C3A21] to-[#3D2C1E] text-white py-16 lg:py-24 border-b-4 border-[#E5A93B] overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#E5A93B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-[#E5A93B] text-[#3D2C1E] font-bold text-xs sm:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                        <i class="fa-solid fa-pizza-slice text-[#C82333]"></i> As Melhores Pizzas Artesanais da Região
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                        Sabor Incomparável com Muito <span class="text-[#E5A93B]">Queijo</span> & Tradição!
+                    </h1>
+
+                    <p class="text-zinc-200 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Massa de fermentação lenta, bordas recheadas generosas, ingredientes frescos selecionados e entrega rápida direto na sua porta.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#cardapio" class="w-full sm:w-auto bg-[#C82333] hover:bg-[#A71D2A] text-white font-bold text-base uppercase tracking-wider px-8 py-4 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-3 border-2 border-[#E5A93B]">
+                            <i class="fa-solid fa-burger text-[#E5A93B]"></i> Ver Cardápio & Pedir
+                        </a>
+                        <a href="https://wa.me/351912345678?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#FFFBF5] hover:bg-zinc-100 text-[#5C3A21] font-bold text-base uppercase tracking-wider px-8 py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 border-2 border-[#E5A93B]">
+                            <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i> WhatsApp Direto
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-3 -right-3 z-20 bg-[#E5A93B] text-[#3D2C1E] font-bold text-xs uppercase px-4 py-2 rounded-xl shadow-lg border border-[#3D2C1E]">
+                            ⭐ 1ª Compra: Cupom <strong class="text-[#C82333]">DON10</strong>
+                        </div>
+                        <div class="bg-[#FFFBF5] p-4 rounded-3xl border-4 border-[#E5A93B] shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-300">
+                            <img 
+                                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" 
+                                alt="Pizza Artesanal Don Formaggio Delivery" 
+                                class="w-full h-72 sm:h-88 object-cover rounded-2xl"
+                            >
+                            <div class="mt-4 flex items-center justify-between text-[#3D2C1E] px-1">
+                                <div>
+                                    <span class="text-[10px] uppercase font-bold text-[#C82333] tracking-widest">Mais Pedida</span>
+                                    <h3 class="font-serif text-lg font-bold text-[#5C3A21]">Pizza Don Formaggio Especial</h3>
+                                </div>
+                                <span class="font-serif text-xl font-bold text-[#C82333]">R$ 54,90</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CARDÁPIO / LOJA DIGITAL ==================== -->
+    <section id="cardapio" class="py-20 bg-[#FFFBF5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-[#C82333] font-bold text-xs uppercase tracking-[0.3em]">Sabores Irresistíveis</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-[#5C3A21]">Cardápio & Loja Delivery</h2>
+                <p class="text-zinc-600 text-sm">Escolha sua pizza favorita, personalize o tamanho e a borda recheada, e adicione à sacola!</p>
+            </div>
+
+            <!-- Filtros e Busca -->
+            <div class="bg-white p-4 sm:p-6 rounded-3xl border-2 border-[#E5A93B]/40 shadow-md mb-10 space-y-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <!-- Busca -->
+                    <div class="relative w-full md:w-96">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400"></i>
+                        <input type="text" id="search-input" onkeyup="renderStore()" placeholder="Buscar pizza por nome ou ingrediente..." class="w-full pl-11 pr-4 py-3 bg-zinc-50 border-2 border-zinc-200 focus:border-[#5C3A21] rounded-2xl text-xs sm:text-sm outline-none transition-colors">
+                    </div>
+
+                    <div class="text-xs font-semibold text-[#5C3A21] bg-[#E5A93B]/20 border border-[#E5A93B] px-4 py-3 rounded-2xl w-full md:w-auto text-center">
+                        <i class="fa-solid fa-tag text-[#C82333] mr-1"></i> Use o cupom <strong class="text-[#C82333]">DON10</strong> na sacola para 10% de desconto!
+                    </div>
+                </div>
+
+                <!-- Abas Categorias -->
+                <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-zinc-100" id="category-tabs">
+                    <button onclick="setCategory('Todos')" data-cat="Todos" class="cat-tab bg-[#5C3A21] text-[#E5A93B] font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all shadow-sm">
+                        Todas
+                    </button>
+                    <button onclick="setCategory('Tradicionais')" data-cat="Tradicionais" class="cat-tab bg-zinc-100 hover:bg-[#E5A93B]/20 text-[#5C3A21] font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl border border-transparent transition-all">
+                        Tradicionais
+                    </button>
+                    <button onclick="setCategory('Especiais')" data-cat="Especiais" class="cat-tab bg-zinc-100 hover:bg-[#E5A93B]/20 text-[#5C3A21] font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl border border-transparent transition-all">
+                        Especiais Formaggio
+                    </button>
+                    <button onclick="setCategory('Doces')" data-cat="Doces" class="cat-tab bg-zinc-100 hover:bg-[#E5A93B]/20 text-[#5C3A21] font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl border border-transparent transition-all">
+                        Pizzas Doces
+                    </button>
+                    <button onclick="setCategory('Bebidas')" data-cat="Bebidas" class="cat-tab bg-zinc-100 hover:bg-[#E5A93B]/20 text-[#5C3A21] font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl border border-transparent transition-all">
+                        Bebidas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div id="store-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Injetado via JS -->
+            </div>
+
+            <!-- Estado Vazio -->
+            <div id="empty-store" class="hidden text-center py-16 bg-white rounded-3xl border-2 border-dashed border-zinc-200">
+                <i class="fa-solid fa-pizza-slice text-5xl text-zinc-300 mb-3"></i>
+                <h3 class="font-serif text-xl font-bold text-zinc-700">Nenhum item encontrado</h3>
+                <p class="text-xs text-zinc-500 mt-1">Tente buscar por outro termo ou limpe os filtros.</p>
+                <button onclick="resetStoreFilters()" class="mt-4 bg-[#5C3A21] text-[#E5A93B] font-bold text-xs uppercase px-6 py-2.5 rounded-xl">
+                    Ver Todo o Cardápio
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO DE COMBOS ==================== -->
+    <section id="combos" class="py-20 bg-[#F5EBE1] border-y-4 border-[#E5A93B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-[#C82333] font-bold text-xs uppercase tracking-[0.3em]">Economia em Família</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-[#5C3A21]">Combos Don Formaggio</h2>
+                <p class="text-zinc-600 text-sm">Combinações perfeitas com descontos imperdíveis para saciar toda a fome.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Combo 1 -->
+                <div class="bg-white rounded-3xl border-2 border-[#E5A93B] p-6 flex flex-col justify-between relative shadow-lg group hover:-translate-y-1 transition-transform">
+                    <span class="absolute top-4 right-4 bg-[#C82333] text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full">
+                        Mais Pedido
+                    </span>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#E5A93B]/20 border border-[#E5A93B] flex items-center justify-center text-[#5C3A21] text-xl mb-4 font-serif font-bold">
+                            🍕
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-[#5C3A21] mb-2">Combo Noite em Família</h3>
+                        <p class="text-zinc-600 text-xs sm:text-sm mb-6 leading-relaxed">
+                            2 Pizzas Grandes (Até 4 sabores) + 1 Coca-Cola 2L Gelada + 1 Pizza Doce Broto de Chocolate.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-zinc-400 line-through block">De R$ 125,00</span>
+                            <span class="font-serif text-2xl font-bold text-[#C82333]">R$ 99,90</span>
+                        </div>
+                        <button onclick="addComboToCart('Combo Noite em Família', 99.90)" class="bg-[#5C3A21] hover:bg-[#3D2C1E] text-[#E5A93B] font-bold text-xs uppercase px-4 py-3 rounded-xl transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Pedir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="bg-white rounded-3xl border-2 border-[#E5A93B] p-6 flex flex-col justify-between relative shadow-lg group hover:-translate-y-1 transition-transform">
+                    <span class="absolute top-4 right-4 bg-[#5C3A21] text-[#E5A93B] font-bold text-[10px] uppercase px-3 py-1 rounded-full">
+                        Super Fartura
+                    </span>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#E5A93B]/20 border border-[#E5A93B] flex items-center justify-center text-[#5C3A21] text-xl mb-4 font-serif font-bold">
+                            🧀
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-[#5C3A21] mb-2">Combo Don Formaggio Max</h3>
+                        <p class="text-zinc-600 text-xs sm:text-sm mb-6 leading-relaxed">
+                            1 Pizza Família Gigante (Borda recheada grátis) + 1 Guaraná Antárctica 2L + Porção de Batata Frita com Cheddar e Bacon.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-zinc-400 line-through block">De R$ 145,00</span>
+                            <span class="font-serif text-2xl font-bold text-[#C82333]">R$ 119,90</span>
+                        </div>
+                        <button onclick="addComboToCart('Combo Don Formaggio Max', 119.90)" class="bg-[#5C3A21] hover:bg-[#3D2C1E] text-[#E5A93B] font-bold text-xs uppercase px-4 py-3 rounded-xl transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Pedir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Combo 3 -->
+                <div class="bg-white rounded-3xl border-2 border-[#E5A93B] p-6 flex flex-col justify-between relative shadow-lg group hover:-translate-y-1 transition-transform">
+                    <span class="absolute top-4 right-4 bg-[#C82333] text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full">
+                        Individual
+                    </span>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#E5A93B]/20 border border-[#E5A93B] flex items-center justify-center text-[#5C3A21] text-xl mb-4 font-serif font-bold">
+                            🍕
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-[#5C3A21] mb-2">Combo Individual Formaggio</h3>
+                        <p class="text-zinc-600 text-xs sm:text-sm mb-6 leading-relaxed">
+                            1 Pizza Média (Sabor à escolha) + 1 Refrigerante Lata 350ml + 1 Calzone Doce de Doce de Leite.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-zinc-400 line-through block">De R$ 72,00</span>
+                            <span class="font-serif text-2xl font-bold text-[#C82333]">R$ 59,90</span>
+                        </div>
+                        <button onclick="addComboToCart('Combo Individual Formaggio', 59.90)" class="bg-[#5C3A21] hover:bg-[#3D2C1E] text-[#E5A93B] font-bold text-xs uppercase px-4 py-3 rounded-xl transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOBRE NÓS ==================== -->
+    <section id="sobre" class="py-20 bg-[#FFFBF5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="relative">
+                    <div class="bg-[#5C3A21] p-3 rounded-3xl border-4 border-[#E5A93B] shadow-2xl">
+                        <img 
+                            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                            alt="Interior e Pizzaiolo Don Formaggio Delivery" 
+                            class="w-full h-80 sm:h-96 object-cover rounded-2xl"
+                        >
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-[#C82333] font-bold text-xs uppercase tracking-[0.3em]">Nossa Tradição</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-[#5C3A21] leading-tight">
+                        Amor por Queijo e Ingredientes Selecionados
+                    </h2>
+                    <p class="text-zinc-700 text-sm sm:text-base leading-relaxed">
+                        A <strong class="text-[#5C3A21]">Don Formaggio Delivery</strong> nasceu do sonho de levar à sua casa uma experiência gastronômica autêntica, onde o queijo de alta qualidade e a massa artesanal são os verdadeiros protagonistas.
+                    </p>
+                    <p class="text-zinc-600 text-sm leading-relaxed">
+                        Trabalhamos com fornecedores selecionados, molho de tomate 100% natural sem conservantes químicos e muita dedicação em cada fornada enviada pelo nosso delivery.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-white p-4 rounded-2xl border-2 border-[#E5A93B]/50 shadow-xs">
+                            <h4 class="font-serif font-bold text-[#C82333] text-lg">100% Artesanal</h4>
+                            <p class="text-xs text-zinc-500 mt-0.5">Massa fresca todos os dias</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border-2 border-[#E5A93B]/50 shadow-xs">
+                            <h4 class="font-serif font-bold text-[#C82333] text-lg">Entrega Ágil</h4>
+                            <p class="text-xs text-zinc-500 mt-0.5">Quentinha na sua mesa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTATO, INSTAGRAM E LOCALIZAÇÃO ==================== -->
+    <footer id="contato" class="bg-[#3D2C1E] text-white pt-20 pb-12 border-t-4 border-[#E5A93B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-[#E5A93B] font-bold text-xs uppercase tracking-[0.3em]">Fale Conosco</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white">Contato & Localização</h2>
+                <p class="text-zinc-300 text-sm">Faça seu pedido online, tire dúvidas no WhatsApp ou venha retirar no balcão.</p>
+            </div>
+
+            <!-- 4 Cards de Contato -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                
+                <!-- Telefone -->
+                <div class="bg-[#5C3A21] border-2 border-[#E5A93B]/40 rounded-3xl p-6 flex flex-col justify-between hover:border-[#E5A93B] transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#E5A93B] text-[#3D2C1E] flex items-center justify-center text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-white mb-1">Telefone Fixo</h3>
+                        <p class="text-zinc-300 text-xs mb-4">Atendimento ao balcão e pedidos.</p>
+                        <p class="font-serif font-bold text-[#E5A93B] text-lg mb-4">(35) 3456-7890</p>
+                    </div>
+                    <a href="tel:+35134567890" class="w-full bg-[#3D2C1E] hover:bg-[#E5A93B] hover:text-[#3D2C1E] text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl text-center transition-colors block border border-[#E5A93B]/30">
+                        Ligar Agora
+                    </a>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="bg-[#5C3A21] border-2 border-[#E5A93B]/40 rounded-3xl p-6 flex flex-col justify-between hover:border-emerald-500 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-white mb-1">WhatsApp Delivery</h3>
+                        <p class="text-zinc-300 text-xs mb-4">Pedidos rápidos e fáceis.</p>
+                        <p class="font-serif font-bold text-emerald-400 text-lg mb-4">(35) 91234-5678</p>
+                    </div>
+                    <a href="https://wa.me/351912345678?text=Olá!%20Vim%20pelo%20site%20da%20Don%20Formaggio." target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl text-center transition-colors block">
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Instagram -->
+                <div class="bg-[#5C3A21] border-2 border-[#E5A93B]/40 rounded-3xl p-6 flex flex-col justify-between hover:border-pink-500 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-white mb-1">Instagram</h3>
+                        <p class="text-zinc-300 text-xs mb-4">Fotos de pizzas e sorteios.</p>
+                        <p class="font-serif font-bold text-pink-300 text-base mb-4">@donformaggiodelivery</p>
+                    </div>
+                    <a href="https://instagram.com/donformaggiodelivery" target="_blank" rel="noopener noreferrer" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl text-center transition-opacity block">
+                        Seguir no Instagram
+                    </a>
+                </div>
+
+                <!-- Horário -->
+                <div class="bg-[#5C3A21] border-2 border-[#E5A93B]/40 rounded-3xl p-6 flex flex-col justify-between hover:border-[#E5A93B] transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#E5A93B] text-[#3D2C1E] flex items-center justify-center text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-white mb-1">Horário</h3>
+                        <p class="text-zinc-300 text-xs mb-3">Terça a Domingo no jantar.</p>
+                        <ul class="text-xs space-y-1 text-zinc-200 font-medium mb-4">
+                            <li class="flex justify-between"><span>Ter a Qui:</span> <span class="text-[#E5A93B]">18h às 23h</span></li>
+                            <li class="flex justify-between"><span>Sex a Dom:</span> <span class="text-[#E5A93B]">18h às 00h</span></li>
+                        </ul>
+                    </div>
+                    <div class="w-full bg-[#3D2C1E] text-emerald-400 font-bold text-xs uppercase tracking-wider py-2.5 rounded-xl text-center border border-[#E5A93B]/30">
+                        <i class="fa-solid fa-circle text-[8px] mr-1"></i> Delivery Ativo
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mapa e Formulário de Feedback -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
+                
+                <!-- Mapa (7 Colunas) -->
+                <div class="lg:col-span-7 bg-[#5C3A21] border-2 border-[#E5A93B]/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                            <div>
+                                <span class="text-[#E5A93B] font-bold text-xs uppercase tracking-wider">Endereço Físico</span>
+                                <h3 class="font-serif text-xl font-bold text-white mt-0.5">Rua das Pizzas, 500 - Centro</h3>
+                                <p class="text-zinc-300 text-xs">Balcão e Retirada rápida</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=Rua+das+Pizzas+500" target="_blank" rel="noopener noreferrer" class="bg-[#E5A93B] hover:bg-amber-400 text-[#3D2C1E] font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors inline-flex items-center justify-center gap-2 shrink-0">
+                                <i class="fa-solid fa-diamond-turn-right"></i> Como Chegar
+                            </a>
+                        </div>
+
+                        <!-- Iframe Mapa -->
+                        <div class="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E5A93B]/30 relative bg-zinc-950">
+                            <iframe 
+                                title="Localização Don Formaggio Delivery"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=-46.635%2C-23.552%2C-46.625%2C-23.542&amp;layer=mapnik&amp;marker=-23.547%2C-46.630" 
+                                class="w-full h-full border-0 filter contrast-125"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário Rápido (5 Colunas) -->
+                <div class="lg:col-span-5 bg-[#5C3A21] border-2 border-[#E5A93B]/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[#E5A93B] font-bold text-xs uppercase tracking-wider">Fale Conosco</span>
+                        <h3 class="font-serif text-xl font-bold text-white mt-0.5 mb-2">Mensagem Rápida</h3>
+                        <p class="text-zinc-300 text-xs mb-6">Dúvidas, sugestões ou encomendas para festas.</p>
+
+                        <form onsubmit="handleFooterContact(event)" class="space-y-4">
+                            <div>
+                                <label for="f-name" class="block text-xs font-bold uppercase text-zinc-300 mb-1">Seu Nome</label>
+                                <input type="text" id="f-name" required placeholder="Ex: Maria Silva" class="w-full bg-[#3D2C1E] border border-zinc-700 focus:border-[#E5A93B] rounded-xl px-4 py-2.5 text-xs text-white outline-none">
+                            </div>
+                            <div>
+                                <label for="f-phone" class="block text-xs font-bold uppercase text-zinc-300 mb-1">Seu WhatsApp</label>
+                                <input type="tel" id="f-phone" required placeholder="(35) 99999-9999" class="w-full bg-[#3D2C1E] border border-zinc-700 focus:border-[#E5A93B] rounded-xl px-4 py-2.5 text-xs text-white outline-none">
+                            </div>
+                            <div>
+                                <label for="f-msg" class="block text-xs font-bold uppercase text-zinc-300 mb-1">Mensagem</label>
+                                <textarea id="f-msg" rows="3" required placeholder="Escreva sua mensagem..." class="w-full bg-[#3D2C1E] border border-zinc-700 focus:border-[#E5A93B] rounded-xl px-4 py-2.5 text-xs text-white outline-none resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#C82333] hover:bg-[#A71D2A] text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 border border-[#E5A93B]">
+                                <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-zinc-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-zinc-400">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-xl bg-[#E5A93B] text-[#3D2C1E] font-serif font-bold flex items-center justify-center text-sm shadow">
+                        DF
+                    </div>
+                    <p class="font-serif text-white uppercase tracking-wider">Don Formaggio Delivery © 2026. Todos os direitos reservados.</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#inicio" class="hover:text-[#E5A93B] transition-colors">Política de Privacidade</a>
+                    <a href="#cardapio" class="hover:text-[#E5A93B] transition-colors">Cardápio Online</a>
+                    <a href="#contato" class="hover:text-[#E5A93B] transition-colors">Suporte WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL DE PERSONALIZAÇÃO (TAMANHO + BORDA) ==================== -->
+    <div id="custom-modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white border-4 border-[#E5A93B] w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            
+            <!-- Cabeçalho Modal -->
+            <div class="bg-[#5C3A21] text-white px-6 py-4 border-b-2 border-[#E5A93B] flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#E5A93B]">Monte sua Pizza</span>
+                    <h3 id="modal-product-name" class="font-serif text-xl font-bold text-white">Nome da Pizza</h3>
+                </div>
+                <button onclick="closeCustomModal()" class="w-9 h-9 rounded-xl bg-[#3D2C1E] hover:bg-red-600 text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Corpo Rolável -->
+            <div class="p-6 overflow-y-auto space-y-6">
+                <p id="modal-product-desc" class="text-xs sm:text-sm text-zinc-600 bg-zinc-50 p-3 rounded-2xl border border-zinc-200"></p>
+
+                <!-- Escolha do Tamanho -->
+                <div>
+                    <label class="block font-serif font-bold text-sm uppercase text-[#5C3A21] mb-2">
+                        1. Escolha o Tamanho <span class="text-xs font-sans text-[#C82333] font-normal">(Obrigatório)</span>
+                    </label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="sizes-container">
+                        <!-- Gerado via JS -->
+                    </div>
+                </div>
+
+                <!-- Escolha da Borda Recheada -->
+                <div>
+                    <label class="block font-serif font-bold text-sm uppercase text-[#5C3A21] mb-2">
+                        2. Borda Recheada <span class="text-xs font-sans text-zinc-500 font-normal">(Opcional)</span>
+                    </label>
+                    <div class="space-y-2" id="crusts-container">
+                        <!-- Gerado via JS -->
+                    </div>
+                </div>
+
+                <!-- Observações -->
+                <div>
+                    <label for="modal-notes" class="block font-serif font-bold text-sm uppercase text-[#5C3A21] mb-1.5">
+                        3. Observações na Pizza
+                    </label>
+                    <textarea id="modal-notes" rows="2" placeholder="Ex: Sem cebola, bem assada, cortar em 8 pedaços..." class="w-full bg-zinc-50 border-2 border-zinc-200 focus:border-[#5C3A21] rounded-2xl p-3 text-xs outline-none resize-none"></textarea>
+                </div>
+            </div>
+
+            <!-- Rodapé Modal -->
+            <div class="bg-zinc-100 px-6 py-4 border-t-2 border-zinc-200 flex items-center justify-between gap-4">
+                <div>
+                    <span class="block text-[10px] font-bold uppercase text-zinc-500">Valor Total</span>
+                    <span id="modal-total-price" class="font-serif text-2xl font-bold text-[#C82333]">R$ 0,00</span>
+                </div>
+                <button onclick="confirmCustomProduct()" class="bg-[#C82333] hover:bg-[#A71D2A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all shadow-md flex items-center gap-2 border border-[#E5A93B]">
+                    <i class="fa-solid fa-bag-shopping"></i> Adicionar à Sacola
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SACOLA LATERAL & CHECKOUT ==================== -->
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 hidden"></div>
+
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-lg bg-white z-50 shadow-2xl border-l-4 border-[#E5A93B] transform translate-x-full transition-transform duration-300 flex flex-col">
+        
+        <!-- Cabeçalho Sacola -->
+        <div class="bg-[#5C3A21] text-white px-6 py-4 border-b-2 border-[#E5A93B] flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-bag-shopping text-[#E5A93B] text-xl"></i>
+                <h3 class="font-serif text-lg font-bold uppercase">Sua Sacola Don Formaggio</h3>
+            </div>
+            <button onclick="toggleCart()" class="w-9 h-9 rounded-xl bg-[#3D2C1E] hover:bg-red-600 text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Conteúdo Rolável -->
+        <div class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-6">
+            
+            <!-- Lista de Itens -->
+            <div id="cart-items-list" class="space-y-3">
+                <!-- Injetado via JS -->
+            </div>
+
+            <!-- Checkout Section -->
+            <div id="checkout-section" class="hidden space-y-6 pt-4 border-t-2 border-zinc-100">
+                
+                <!-- Cupom -->
+                <div class="bg-amber-50 p-4 rounded-2xl border-2 border-amber-200">
+                    <label for="coupon-input" class="block font-bold text-xs uppercase text-amber-900 mb-1.5">
+                        <i class="fa-solid fa-tag text-[#C82333] mr-1"></i> Cupom de Desconto
+                    </label>
+                    <div class="flex gap-2">
+                        <input type="text" id="coupon-input" placeholder="Digite DON10" class="flex-1 bg-white border-2 border-amber-200 focus:border-[#5C3A21] rounded-xl px-3 py-2 text-xs font-bold uppercase text-zinc-800 outline-none">
+                        <button type="button" onclick="applyCoupon()" class="bg-[#5C3A21] hover:bg-[#3D2C1E] text-[#E5A93B] font-bold text-xs uppercase px-4 py-2 rounded-xl transition-colors">
+                            Aplicar
+                        </button>
+                    </div>
+                    <p id="coupon-feedback" class="text-xs font-bold mt-1.5 hidden"></p>
+                </div>
+
+                <!-- Formulário -->
+                <form id="checkout-form" onsubmit="finalizeOrder(event)" class="space-y-4">
+                    <h4 class="font-serif text-base font-bold text-[#5C3A21] border-b border-zinc-200 pb-2">
+                        Dados de Entrega & Pagamento
+                    </h4>
+
+                    <!-- Tipo Pedido -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-zinc-600 mb-1.5">Modalidade</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button type="button" id="mode-delivery" onclick="setOrderType('Delivery')" class="py-2.5 px-3 rounded-xl border-2 border-[#5C3A21] bg-[#E5A93B] text-[#3D2C1E] font-bold text-xs uppercase flex items-center justify-center gap-1.5 shadow-xs">
+                                <i class="fa-solid fa-motorcycle"></i> Delivery
+                            </button>
+                            <button type="button" id="mode-pickup" onclick="setOrderType('Retirada')" class="py-2.5 px-3 rounded-xl border-2 border-zinc-200 bg-zinc-100 text-zinc-600 font-bold text-xs uppercase flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-store"></i> Retirar (Grátis)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Dados Pessoais -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="cust-name" class="block text-xs font-bold text-zinc-600 mb-1">Seu Nome *</label>
+                            <input type="text" id="cust-name" required placeholder="Nome completo" class="w-full bg-zinc-50 border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2.5 text-xs outline-none">
+                        </div>
+                        <div>
+                            <label for="cust-whatsapp" class="block text-xs font-bold text-zinc-600 mb-1">Seu WhatsApp *</label>
+                            <input type="tel" id="cust-whatsapp" required placeholder="(35) 99999-9999" class="w-full bg-zinc-50 border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2.5 text-xs outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Endereço (Delivery) -->
+                    <div id="delivery-fields" class="space-y-3 bg-zinc-50 p-3.5 rounded-2xl border-2 border-zinc-200">
+                        <div>
+                            <label for="cust-neighborhood" class="block text-xs font-bold text-zinc-600 mb-1">Bairro (Taxa de Entrega) *</label>
+                            <select id="cust-neighborhood" onchange="updateTotals()" class="w-full bg-white border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2.5 text-xs font-semibold outline-none">
+                                <option value="5.00" data-name="Centro / Vila Nova">Centro / Vila Nova — Taxa R$ 5,00</option>
+                                <option value="7.00" data-name="Jardim América / Santa Cruz">Jardim América / Santa Cruz — Taxa R$ 7,00</option>
+                                <option value="10.00" data-name="Bairros Distantes">Bairros Distantes — Taxa R$ 10,00</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="col-span-2">
+                                <label for="cust-street" class="block text-xs font-bold text-zinc-600 mb-1">Rua / Av *</label>
+                                <input type="text" id="cust-street" placeholder="Ex: Rua das Flores" class="w-full bg-white border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2 text-xs outline-none">
+                            </div>
+                            <div>
+                                <label for="cust-number" class="block text-xs font-bold text-zinc-600 mb-1">Número *</label>
+                                <input type="text" id="cust-number" placeholder="123" class="w-full bg-white border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2 text-xs outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="cust-comp" class="block text-xs font-bold text-zinc-600 mb-1">Complemento</label>
+                            <input type="text" id="cust-comp" placeholder="Apto 12, Bloco A" class="w-full bg-white border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2 text-xs outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Pagamento -->
+                    <div>
+                        <label for="pay-method" class="block text-xs font-bold uppercase text-zinc-600 mb-1">Forma de Pagamento *</label>
+                        <select id="pay-method" onchange="handlePaymentChange()" class="w-full bg-zinc-50 border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2.5 text-xs font-bold outline-none">
+                            <option value="Pix">Pix (Chave Copia e Cola)</option>
+                            <option value="Cartão na Entrega">Cartão na Entrega (Crédito / Débito)</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                        </select>
+                    </div>
+
+                    <!-- Box Pix -->
+                    <div id="pix-box" class="bg-emerald-50 border-2 border-emerald-500 rounded-2xl p-3.5 space-y-2">
+                        <p class="text-xs font-bold text-emerald-800 flex items-center gap-1.5">
+                            <i class="fa-brands fa-pix text-sm"></i> Chave Pix CNPJ Don Formaggio:
+                        </p>
+                        <div class="flex items-center gap-2">
+                            <input type="text" readonly value="45.678.901/0001-22" id="pix-key-input" class="flex-1 bg-white border border-emerald-300 rounded-lg px-2.5 py-1.5 text-xs font-mono font-bold text-zinc-700">
+                            <button type="button" onclick="copyPixKey()" class="bg-emerald-600 text-white font-bold text-xs uppercase px-3 py-1.5 rounded-lg hover:bg-emerald-700">
+                                Copiar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Troco -->
+                    <div id="change-box" class="hidden">
+                        <label for="cash-change" class="block text-xs font-bold text-zinc-600 mb-1">Troco para quanto? (Deixe vazio se não precisar)</label>
+                        <input type="text" id="cash-change" placeholder="Ex: Troco para R$ 100,00" class="w-full bg-zinc-50 border-2 border-zinc-200 focus:border-[#5C3A21] rounded-xl px-3 py-2 text-xs outline-none">
+                    </div>
+
+                    <!-- Resumo Valores -->
+                    <div class="bg-zinc-100 p-4 rounded-2xl border-2 border-zinc-200 space-y-1.5 text-xs">
+                        <div class="flex justify-between text-zinc-600">
+                            <span>Subtotal:</span>
+                            <span id="summary-subtotal" class="font-bold">R$ 0,00</span>
+                        </div>
+                        <div id="summary-discount-row" class="hidden flex justify-between text-[#C82333] font-bold">
+                            <span>Desconto (DON10):</span>
+                            <span id="summary-discount">- R$ 0,00</span>
+                        </div>
+                        <div class="flex justify-between text-zinc-600">
+                            <span>Taxa de Entrega:</span>
+                            <span id="summary-delivery" class="font-bold">R$ 5,00</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-zinc-300 text-sm">
+                            <span class="font-serif font-bold text-[#5C3A21]">TOTAL:</span>
+                            <span id="summary-total" class="font-serif text-lg font-bold text-[#C82333]">R$ 0,00</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-[#C82333] hover:bg-[#A71D2A] text-white font-bold text-sm uppercase tracking-wider py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 border-2 border-[#E5A93B]">
+                        <i class="fa-solid fa-circle-check text-[#E5A93B]"></i> Enviar Pedido no WhatsApp
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </aside>
+
+    <!-- ==================== MODAL DE SUCESSO ==================== -->
+    <div id="order-success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white border-4 border-[#E5A93B] w-full max-w-md rounded-3xl shadow-2xl overflow-hidden text-center p-6 sm:p-8 space-y-5">
+            <div class="w-16 h-16 rounded-full bg-[#E5A93B] text-[#3D2C1E] mx-auto flex items-center justify-center text-3xl shadow-lg border-2 border-[#3D2C1E]">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <span class="inline-block bg-[#5C3A21] text-[#E5A93B] font-bold text-xs uppercase px-3 py-1 rounded-full mb-2">
+                    Pedido #<span id="order-number-display">0000</span> Confirmado!
+                </span>
+                <h3 class="font-serif text-2xl font-bold text-[#5C3A21]">Fantástico!</h3>
+                <p class="text-xs sm:text-sm text-zinc-600 mt-1">Seu pedido foi formatado perfeitamente. Clique abaixo para enviar diretamente para o WhatsApp da Don Formaggio.</p>
+            </div>
+
+            <div id="order-receipt-box" class="bg-zinc-50 text-left p-4 rounded-2xl border-2 border-zinc-200 text-xs space-y-1.5 max-h-48 overflow-y-auto text-zinc-700 font-mono">
+                <!-- Injetado via JS -->
+            </div>
+
+            <div class="space-y-2.5 pt-2">
+                <a id="send-whatsapp-receipt-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm uppercase tracking-wider py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Enviar no WhatsApp Agora
+                </a>
+                <button onclick="closeSuccessModal()" class="w-full bg-zinc-200 hover:bg-zinc-300 text-zinc-700 font-bold text-xs uppercase py-3 rounded-xl transition-colors">
+                    Voltar para o Site
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICAÇÃO ==================== -->
+    <div id="toast-box" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-[#5C3A21] text-white px-5 py-3 rounded-2xl border-2 border-[#E5A93B] shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+        <i class="fa-solid fa-circle-check text-[#E5A93B] text-lg"></i>
+        <span id="toast-text" class="font-semibold text-xs sm:text-sm">Item adicionado à sacola!</span>
+    </div>
+
+    <!-- ==================== SCRIPT PRINCIPAL ==================== -->
+    <script src="script.js"></script>
+</body>
+</html>
